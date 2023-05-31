@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: "Roboto Mono", monospace;
+  margin-top: 20px;
+}
+
+.emoji {
+  font-size: 100px;
+}
+.temperature {
+  font-family: "Roboto Mono", monospace;
+  font-size: 75px;
+}
+
+.current {
+  list-style: none;
+  margin-left: -30px;
+  margin-top: 15px;
+}
+
+.type {
+  list-style: none;
+  margin-left: -10px;
+  margin-top: 40px;
+}
+.units a {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
