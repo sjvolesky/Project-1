@@ -40,10 +40,15 @@ function displayCity(response) {
   let cityInput = document.querySelector("#city");
   let citySearch = document.querySelector("#city-search");
   let descriptionElement = documetn.querySelector("#description");
-  cityInput.innerHTML = response.data.name;
   let tempElement = document.querySelector("#temperature");
+  let iconElement = document.querySelector("#icon");
+  cityInput.innerHTML = response.data.name;
   tempElement.innerHTML = response.data.main.temp;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
