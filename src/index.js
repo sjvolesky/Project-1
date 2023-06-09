@@ -42,6 +42,7 @@ function displayCity(response) {
   let descriptionElement = documetn.querySelector("#description");
   let tempElement = document.querySelector("#temperature");
   let iconElement = document.querySelector("#icon");
+
   cityInput.innerHTML = response.data.name;
   tempElement.innerHTML = response.data.main.temp;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -89,6 +90,8 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
