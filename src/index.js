@@ -39,9 +39,11 @@ function currentStats(response) {
 function displayCity(response) {
   let cityInput = document.querySelector("#city");
   let citySearch = document.querySelector("#city-search");
+  let descriptionElement = documetn.querySelector("#description");
   cityInput.innerHTML = response.data.name;
   let tempElement = document.querySelector("#temperature");
   tempElement.innerHTML = response.data.main.temp;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
@@ -68,20 +70,3 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
-//Bonus
-
-//function convertToF() {
-//let temperatureElement = document.querySelector("#temperature");
-//temperatureElement.innerHTML = 68;
-//}
-
-//function convertToC() {
-//let temperatureElement = document.querySelector("#temperature");
-//temperatureElement.innerHTML = 20;
-//}
-
-//let fahrenheitlink = document.querySelector("#fahrenheit-link");
-//fahrenheitlink.addEventListener("click", convertToF);
-
-//let celsiusLink = document.querySelector("#celsius-link");
-//celsiusLink.addEventListener("click", convertToC);
