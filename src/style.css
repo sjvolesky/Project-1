@@ -29,6 +29,8 @@ h1 {
 }
 .units a {
   text-decoration: none;
+  color: black;
+  cursor: default;
 }
 .weather-app-wrapper {
   max-width: 600px;
@@ -36,4 +38,6 @@ h1 {
 
 a {
   text-decoration: none;
+  color: black;
+  cursor: default;
 }

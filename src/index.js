@@ -28,6 +28,7 @@ function currentStats(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let temp = document.querySelector("#temperature");
+  celsiusTemperature = response.data.main.temp;
   city.innerHTML = response.data.name;
   percipitation.innerHTML = `Percipitation: ${
     response.data.rain ? response.data.rain["1h"] : 0
@@ -78,9 +79,8 @@ function getCurrentPosition(event) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-
+  let temperatureElement = document.querySelector("#temperature");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
