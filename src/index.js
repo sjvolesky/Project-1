@@ -40,6 +40,8 @@ function currentStats(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 function displayCity(response) {
   let cityInput = document.querySelector("#city");
