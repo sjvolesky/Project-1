@@ -36,8 +36,10 @@ h1 {
   max-width: 600px;
 }
 
-a {
-  text-decoration: none;
+.fahrenheit a {
   color: black;
   cursor: default;
+}
+a {
+  text-decoration: none;
 }
