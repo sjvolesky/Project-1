@@ -75,7 +75,6 @@ function getForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-
 function currentStats(response) {
   let city = document.querySelector("#city");
   let percipitation = document.querySelector("#percipitation");
@@ -116,6 +115,10 @@ form.addEventListener("submit", searchCity);
 function searchCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-search").value;
+
+  search(cityName);
+}
+function search(cityName) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=5da7b2dc058f07286fea39c4cee516a3&units=metric`;
 
   axios.get(url).then(currentStats);
@@ -161,3 +164,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Denver");
