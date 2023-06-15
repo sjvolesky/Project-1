@@ -32,7 +32,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row">`;
 
@@ -112,16 +112,17 @@ function displayCity(response) {
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
 
+function search(cityName) {
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=5da7b2dc058f07286fea39c4cee516a3&units=metric`;
+
+  axios.get(url).then(currentStats);
+}
+
 function searchCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-search").value;
 
   search(cityName);
-}
-function search(cityName) {
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=5da7b2dc058f07286fea39c4cee516a3&units=metric`;
-
-  axios.get(url).then(currentStats);
 }
 
 function showCurrent(position) {

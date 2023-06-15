@@ -1,5 +1,10 @@
 body {
   font-family: sans-serif;
+  background: linear-gradient(
+    359.3deg,
+    rgb(196, 214, 252) 1%,
+    rgba(187, 187, 187, 0) 70.9%
+  );
 }
 
 h1 {
